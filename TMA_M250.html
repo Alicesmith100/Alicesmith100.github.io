@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TMA M250</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <p>
+    a. Scenario: A horse racing meeting which has races and runners in the races. With each race as the key, which would be a String labelled Race1, Race2 etc., and the values would be a Set of Strings where each String represents a runner in the race. The types I have chosen are suitable because the String as the key as it is just the name of the race as a word, and a Set of Strings as the runners as they are a collection of the names of the horses. (90 words)
+    </p>
+<p>
+b. private Map String, Set String >> races;
+<br>
+/**
+<br>
+* Constructor for objects of class RaceMeeting
+<br>
+*/
+<br>
+public RaceMeeting()
+<br>
+{
+<br>
+races = new TreeMap();
+<br>
+}
+<br>
+/**
+<br>
+* Creates a sample race meeting
+<br>
+*
+<br>
+*/
+<br>
+public void createMeeting()
+<br>
+{
+<br>
+Set String runners = new HashSet();
+<br>
+runners.add("Red Rum");
+<br>
+runners.add("Arkle");
+<br>
+runners.add("Kauto Star");
+<br>
+races.put("Race1", runners);
+<br>
+runners = new HashSet();
+<br>
+runners.add("Frankel");
+<br>
+runners.add("See The Stars");
+<br>
+runners.add("New Approach");
+<br>
+races.put("Race2", runners);
+<br>
+}
+    </p>
+    <p>
+
+c. /**
+<br>
+* Iterates over the map to print out each race with the runners in the race
+<br>
+* @param takes no arguments
+<br>
+*/
+<br>
+public void printMap()
+<br>
+{
+<br>
+String output;
+<br>
+SetString runners;
+<br>
+for (String eachRace : races.keySet())
+<br>
+{
+<br>
+output = eachRace;
+<br>
+runners = races.get(eachRace);
+<br>
+System.out.println(output);
+<br>
+System.out.println(runners);
+<br>
+}
+<br>
+}
+<br>
+/**
+<br>
+* Prints the value of the key if it exists otherwise prints
+<br>
+* that the key is not present
+<br>
+* @param takes a String argument
+<br>
+*/
+<br>
+public void printMapValue(String aKey)
+<br>
+{
+<br>
+if (races.get(aKey) != null)
+<br>
+{
+<br>
+System.out.println(races.get(aKey));
+<br>
+}
+<br>
+else
+<br>
+{
+<br>
+System.out.println("The key is not present");
+<br>
+}
+<br>
+}
+<br>
+/**
+<br>
+* Adds the key and value to the map from the given arguments,
+<br>
+* @param takes two String arguments separate by a ,
+<br>
+*/
+<br>
+public void addMapEntry(String aString, String aSet)
+<br>
+{
+<br>
+SetString runners = new HashSet();
+<br>
+runners.add(aSet);
+<br>
+races.put(aString, runners);
+<br>
+}
+    </p>
+    <p>
+
+d. /**
+<br>
+* If the String argument exists in the map then this is removed
+<br>
+* @param takes a String argument
+<br>
+* @return true if it has been removed, false if not
+<br>
+*/
+<br>
+public boolean deleteEntry(String aString)
+<br>
+{
+<br>
+if (races.containsKey(aString))
+<br>
+{
+<br>
+races.remove(aString);
+<br>
+return true;
+<br>
+}
+<br>
+else
+<br>
+{
+<br>
+return false;
+<br>
+}
+<br>
+}
+<br>
+/**
+<br>
+* Adds a new value to a collection of values of a particular key
+<br>
+* @param takes two String arguments
+<br>
+* @return the new set
+<br>
+*/
+<br>
+public Set String addValue(String aKey, String aValue)
+<br>
+{
+<br>
+Set String newString = races.get(aKey);
+<br>
+newString.add(aValue);
+<br>
+races.put(aKey, newString);
+<br>
+return races.get(aKey);
+<br>
+}
+<br>
+/**
+<br>
+* Deletes a value from a collection of values for a particular key
+<br>
+* @param takes two String arguments
+<br>
+* @return the new set
+<br>
+*/
+<br>
+public Set String deleteValue(String aKey, String aValue)
+<br>
+{
+<br>
+Set String newString = races.get(aKey);
+<br>
+newString.remove(aValue);
+<br>
+races.put(aKey, newString);
+<br>
+return races.get(aKey);
+<br>
+}
+    </p>
+    <p>
+
+e. Code to test methods:
+<br>
+RaceMeeting newmarket = new RaceMeeting();
+<br>
+newmarket.createMeeting();
+<br>
+newmarket.printMap();
+<br>
+System.out.println("Expected: true");
+<br>
+System.out.println(newmarket.deleteEntry("Race2"));
+<br>
+newmarket.printMap();
+<br>
+System.out.println("Expected: [Kauto Star, Red Rum, Arkle, Denman]");
+<br>
+System.out.println(newmarket.addValue("Race1", "Denman"));
+<br>
+System.out.println("Expected: [Kauto Star, Red Rum, Arkle]");
+<br>
+System.out.println(newmarket.deleteValue("Race1", "Denman"));
+<br>
+Results from OU Workspace:
+<br>
+Race1
+<br>
+[Kauto Star, Red Rum, Arkle]
+<br>
+Race2
+<br>
+[New Approach, See The Stars, Frankel]
+<br>
+Expected: true
+<br>
+true
+<br>
+Race1
+<br>
+[Kauto Star, Red Rum, Arkle]
+<br>
+Expected: [Kauto Star, Red Rum, Arkle, Denman]
+<br>
+[Kauto Star, Red Rum, Arkle, Denman]
+<br>
+Expected: [Kauto Star, Red Rum, Arkle]
+<br>
+[Kauto Star, Red Rum, Arkle]
+    </p>
+</body>
+</html>
