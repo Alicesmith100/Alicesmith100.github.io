@@ -1,0 +1,199 @@
+<html>
+    <head>
+        <title>TMA M256</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+<p>        
+    b. i. <b>Design heuristic</b> <i>Prevent errors</i>
+<br>
+<b>Issue</b> The wrong combination of date, time and working set could be selected and added to the scheduled exercises box in error.
+<br>
+<b>Suggested improvement</b> A confirmation box could pop up with the three pieces of information and two buttons to click on, one saying confirm and the other one saying cancel.
+<br>
+ii. <b>Design Heuristic</b> <i>Use simple grouping and ordering</i>
+<br>
+<b>Issue</b> The Edit Working Set button is placed away from the list of the working set, making it appear not related to that, and as though it is connected to the scheduled exercises box which it is under.
+<br>
+<b>Suggested improvement</b> Move the Edit Working Set button to underneath the working set list.
+<br>
+iii. <b>Design heuristic</b> <i>Minimise users’ memory load</i>
+<br>
+<b>Issue</b> The user may wish to change one part of a scheduled exercise, for instance the time, but to do this they need to delete the whole exercise and remember the two other parts (date and working set), to then re-enter all three to create a new scheduled exercise.
+<br>
+<b>Suggested improvement</b> Add an edit button under the Scheduled Exercises list, which gives a pop up box showing the previous selections and having each part be modifiable.
+<br>
+c. Widget table for the Schedule Routine Safety Check use case
+
+Information Input or output Widget
+
+Routine safety check Input List of safety checks
+
+Day of the week (Monday –
+
+Sunday) Input List of days
+
+Time (24 hour clock) Input Text field
+
+Company building Input List of company buildings
+
+Message showing which
+
+kind of safety check has
+
+been scheduled, with the
+
+start time and duration Output Dialogue box
+
+The duration of each routine safety check is something that would need to already be known by the program as it is not inputted by the user.
+        </p>
+        
+    <p>
+        iv. private void displayPatientsWards()
+<br>
+{
+<br>
+Patient thePatient = (Patient)changeWardPatientList.getSelectedValue();
+<br>
+Ward patientWard = cottageHospital.getWard(thePatient);
+<br>
+patientWardField.setText(patientWard.toString());
+<br>
+Collection&ltWard&gt wards = cottageHospital.getWards();
+<br>
+List&ltWard&gt otherWards = new ArrayList&ltWard&gt();
+<br>
+for (Ward eachWard : wards)
+<br>
+{
+<br>
+if (patientWard != eachWard)
+<br>
+{
+<br>
+otherWards.add(eachWard);
+<br>
+}
+<br>
+}
+<br>
+changeWardNewWardList.setListData(otherWards);
+<br>
+}
+<br>
+c. i. private void changeWardPatientListValueChanged(javax.swing.event.ListSelectionEvent evt)
+<br>
+{
+<br>
+displayPatientsWards();
+<br>
+}
+<br>
+ii. private void doChangeWard()
+<br>
+{
+<br>
+String dateString = changeWardDateField.getText();
+<br>
+M256Date theDate = null;
+<br>
+Patient thePatient = (Patient)changeWardPatientList.getSelectedValue();
+<br>
+M256Date oldDate = (M256Date)cottageHospital.getLastWardChangeDate(thePatient);
+<br>
+Ward newWard = (Ward)changeWardNewWardList.getSelectedValue();
+<br>
+try
+<br>
+{
+<br>
+theDate = new M256Date(dateString);
+<br>
+}
+<br>
+catch (Exception e)
+<br>
+{
+<br>
+changeWardArea.setText("Error: Incorrect date format");
+<br>
+return;
+<br>
+}
+<br>
+if (cottageHospital.getLastWardChangeDate(thePatient) == null)
+<br>
+{
+<br>
+cottageHospital.changeWard(thePatient, newWard, theDate);
+<br>
+changeWardArea.setText("Patient " + thePatient.getName()
+<br>
++ " moved to " + newWard.getName() + " ward.");
+<br>
+displayPatientsWards();
+<br>
+changeWardDateField.setText("");
+<br>
+return;
+<br>
+}
+<br>
+else
+<br>
+{
+<br>
+if (theDate.after(oldDate))
+<br>
+{
+<br>
+cottageHospital.changeWard(thePatient, newWard, theDate);
+<br>
+changeWardArea.setText("Patient " + thePatient.getName()
+<br>
++ " moved to " + newWard.getName() + " ward.");
+<br>
+displayPatientsWards();
+<br>
+changeWardDateField.setText("");
+<br>
+return;
+<br>
+}
+<br>
+else
+<br>
+{
+<br>
+changeWardArea.setText("The supplied date is not after the previous change of ward");
+<br>
+return;
+<br>
+}
+<br>
+}
+<br>
+}
+<br>
+iii. private void changeWardButtonActionPerformed(java.awt.event.ActionEvent evt)
+<br>
+{
+<br>
+doChangeWard();
+<br>
+}
+        
+        </p>
+        <p>
+        v. private void changeWardScreenMouseClicked(java.awt.event.MouseEvent evt)
+
+{
+<br>
+displayChangeWardPatients();
+<br>
+}
+            ***Add image after this
+        </p>
+    
+    </body>
+</html>
