@@ -1,3 +1,36 @@
+body {
+    background-color: aqua;
+    font-family: Arial, sans-serif;
+}
+
 h1 {
   color: red;
+    font-family: impact, fantasy;
+    font-size: 40px;
+    font-style: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: center;
+}
+h2 {
+    background-color: aliceblue;
+    font-family: comic sans ms, cursive;
+    font-size: 30px;
+    font-style: bold;
+    text-align: center;
+}
+p {
+    background-color: aliceblue;
+    line-height: 1.4em;
+}
+a:link {
+    color: blue;
+    text-decoration: none;
+}
+a:visite {
+    color: chartreuse;
+}
+a:hover {
+    color:deeppink;
+    text-decoration: underline;
 }
