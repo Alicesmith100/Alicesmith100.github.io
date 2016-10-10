@@ -32,8 +32,8 @@ a:link {
     color: blue;
     text-decoration: none;
 }
-a:visite {
-    color: chartreuse;
+a:visited {
+    color: blue;
 }
 a:hover {
     color:deeppink;
