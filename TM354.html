@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TM354 Software Engineering</title>
+<link rel="stylesheet" href="style.css">
+</head>
+    <body>
+        <h1>
+        TM354 Software Engineering
+        </h1>
+        <p>
+        Below shows what I've learnt in TM354 and what I've done in 3 assignments
+        </p>
+        <h3>
+        TMA01
+        </h3>
+        <p>
+        An agile approach will always deliver better software than a plan-driven approach when it is used in a smaller project, because it is easier to manage, but not necessarily for a large project because without the documentation it is harder to spread out the workload. A plan-driven approach can be useful in a larger project because it has more traceability, which makes it easier to make changes down the line and also to make sure all the requirements have been met, however, the more involved the stakeholders are the less likely this is to happen. This means that an agile approach can be followed in a larger scale project as long as the stakeholders are involved throughout, then the software would be better than a plan-driven approach. 
+        </p>
+        <img src="Images/TMA01%20subscription%20activity%20diagram.png" alt="Activity diagram" title="Activity diagram for magazine subscription" />
+        <h3>
+        Use case diagram for a magazine subscription
+        </h3>
+        <img src="Images/TMA01%20use%20case%20diagram.png" alt="Use case diagram" title="Use case diagram" />
+        <p>
+        The subscription system for WMG can be developed by an agile team because it is a project that is starting from scratch and it can be done quickly which would give the company an efficient software system to use in a shorter space of time. It can be said that agile methods do not scale up to larger systems but agile focuses on reducing the risks involved, such as failure and lack of communication, an issue with large scale projects.<br><br>
+            
+        An agile approach can help with timely delivery through better communication and collaboration among developers, with sprints, iterations of weeks not months, being strict on the amount of features that can be delivered and regular meetings to increase awareness of progress.<br><br>
+
+        Agile approach helps with maintainability because it produces documents that are simple and easy to understand with a well-defined purpose. It keeps a balance between having enough documentation without creating too much and slowing the project down. <br><br>
+            
+        The approach the directors need to take toward the development team for the project to succeed is embrace the fact that the requirements will change during development and they should be under continuous review. They should be more engaged in the project after seeing working software delivered early and frequently, this should also increase the stakeholders’ trust (Segue Technologies, 2015).<br><br>
+        (218 words)<br><br>
+            
+        References:<br>
+            The Open University (2014) <i>Block 1 From domain to requirements: Unit 1 Approaches to software development and Unit 4 The case study: part 1,</i> Milton Keynes, The Open University.<br>
+            Segue Technologies (2015) <i>8 Benefits of Agile Software Development</i> [Online]. Available at <a href="http://www.seguetech.com/8-benefits-of-agile-software-development/">http://www.seguetech.com/8-benefits-of-agile-software-development/</a> (Accessed 27 November 2016)
+        </p>
+        <h3>
+        TMA02
+        </h3>
+        <p>
+        Table shows the possible candidates for an initial class diagram for the magazine subscription company
+        </p>
+        <table>
+        <tr>
+            <th><b>Candidate class name</b></th><th><b>Keep (yes/no)?</b></th><th><b>Reason for keeping or discarding candidate class</b></th>
+            </tr>
+            <tr>
+            <td>Walton Magazine Group, Distribution system, Computer system, Board of Directors, Publishing company, Sales team staff</td><td>no</td><td>Not part of the domain</td>
+            </tr>
+            <tr>
+            <td>Magazine</td><td>Magazine</td><td>Has attributes such as the type of magazine and the cost</td>
+            </tr>
+            <tr>
+            <td>Subscription</td><td>yes</td><td>A subscription exists over a period of time</td>
+            </tr>
+            <tr>
+            <td>Renewal</td><td>no</td><td>Can be an attribute of subscription</td>
+            </tr>
+            <tr>
+            <td>Customer</td><td>yes</td><td>Has attributes such as address and has subscriptions</td>
+            </tr>
+            <tr>
+            <td>Member of public</td><td>no</td><td>The same concept as customer</td>
+            </tr>
+            <tr>
+            <td>Renewal reminder</td><td>no</td><td>Can be a method of subscription</td>
+            </tr>
+            <tr>
+            <td>Credit/debit card</td><td>no</td><td>Attribute of customer</td>
+            </tr>
+            <tr>
+            <td>Form</td><td>no</td><td>Not part of the domain, something the customer fills in to create attributes</td>
+            </tr>
+        
+        </table>
+        <br>
+        
+            <img src="Images/My%20initial%20model%20TMA02%20M354%20Class%20diagram.png" alt="Class diagram" title="Class diagram for magazine subscription company" />
+            
+        <p>
+    
+        The classes will be:<br>
+        Magazine, Subscription, Customer
+            <br>
+        </p>
+        
+            <img src="Images/Analysis_model_car_rental.png" alt="Analysis model of car rental company" title="Analysis model of car rental company" />
+    <p>
+            Customer.Rental.Vehicle <br>
+This shows the vehicle that is linked with the rental that is linked with the customer. <br>
+        The Vehicle in the Category for the Rental includes the Vehicle allocated to the Rental <br>
+            context Rental inv: self.category.vehicle->includes(self.vehicle)<br>
+            This shows that the vehicle that is rented is one of the vehicles available in that category.
+        </p>
+        <p>
+            context Company::<i>allocateVehicleToRental</i>(vehicle: Vehicle, rental : Rental) <br>
+Pre: <br>
+-  - rental is linked to branch <br>
+-  - rental is linked to customer <br>
+-  - vehicle is linked to branch and is available at the required date and time<br>
+-  - a Category is linked to rental and vehicle is a part of this Category <br>
+Post:<br>
+-  - rental linked to Category will be linked to vehicle
+
+        </p>
+        <img src="Images/TMA02%20q3%20fork%20sequence%20diagram.png" alt="Fork diagram" title="Fork sequence diagram" /><br>
+        <img src="Images/TMA02%20q3%20cascade%20sequence%20diagram.png" alt="Cascade diagram" title="Cascade sequence diagram" /><br>
+        <img src="Images/TMA02%20Q3%20class%20diagram.png" alt="Class diagram" title="Class diagram for car rental company" />
+            <br>
+        <h3>
+        TMA03
+        </h3>
+        <p>
+        Traffic light state chart diagram <br>
+        <img src="Images/TMA03%20Q2%20traffic%20light%20state%20class%20diagram.png" alt="State chart diagram" title="Traffic light state chart diagram" />
+        </p>
+        <p>
+        Performance scenario:<br>
+        This is a scenario where the existing customer updates their personal details via the website.
+        </p>
+            <table>
+        <tr>
+                <th><b>Part of scenario</b></th><th><b>Type of value</b></th><th><b>Actual Value</b></th>
+                </tr>
+                <tr>
+                <td>Actual Value</td><td>External</td><td>Website, existing customer</td>
+                </tr>
+                <tr>
+                <td>Stimulus</td><td>Sporadic event</td><td>Updating saved personal details</td>
+                </tr>
+                <tr>
+                <td>Artefact</td><td>System</td><td>Distribution system</td>
+                </tr>
+                <tr>
+                <td>Environment</td><td>Normal</td><td>Website working normally</td>
+                </tr>
+                <tr>
+                <td>Response</td><td>Process stimuli</td><td>Update details, confirm update</td>
+                </tr>
+                <tr>
+                <td>Response measure</td><td>Data loss</td><td>System successfully records the data 99.9% of the time</td>
+                </tr>
+        
+        </table>
+
+
+    </body>
+</html>

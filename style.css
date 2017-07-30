@@ -2,10 +2,17 @@ body {
     background-color: aqua;
     font-family: Arial, sans-serif;
     text-align: center;
+    color:darkblue;
+    margin: 0 auto;
+    width: 90%;
 }
 
+h {
+    font-style: bold;
+    text-align: center;
+}
 h1 {
-  color: red;
+  color:darkblue;
     font-family: impact, fantasy;
     font-size: 40px;
     font-style: bold;
@@ -14,14 +21,14 @@ h1 {
     text-align: center;
 }
 h2 {
-    background-color: aliceblue;
+    /*background-color: aliceblue;*/
     font-family: comic sans ms, cursive;
     font-size: 30px;
     font-style: bold;
     text-align: center;
 }
 p {
-    background-color: aliceblue;
+    /*background-color: aliceblue;*/
     line-height: 1.4em;
     width: 90%;
     padding: 20px;
@@ -39,16 +46,40 @@ a:hover {
     color:deeppink;
     text-decoration: underline;
 }
-div /*on the TMA04_T215 page*/
+div
 {
-    height: 300px;
-    width: 400px;
-    background-color: blueviolet;
+    float: left;
+    margin: 10px
 }
-table, th {
+div.contents{
+    width: 15%;
+    background-color: darkblue;
+    color: aliceblue;
+}
+div.column1of2 {
+    width: 81%;
+}
+/*th {
     border-bottom: 1px solid green;
     border: 1px solid red;
+}*/
+table {
+    border: 5px solid grey;
+    border-radius: 5px solid red;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    background-color: aqua;
+    /*border-collapse: collapse;*/
+    
 }
+tr {
+    background-color: aliceblue;
+}
+tr:hover{
+    background-color:azure;
+}
+
+
 th {
     text-align: left;
     text-transform: uppercase;
@@ -61,13 +92,11 @@ td {
     text-align: left;
     padding: 5px;
     margin: 0px;
-    border-right: 1px solid green;
-    
 }
 ul {
     list-style-type: disc;
 }
 li{
     text-align: left;
-    
+    margin-left: 20px;
 }
